@@ -1,0 +1,16 @@
+﻿{
+  "gridEditors": [
+    {
+      "name": "Gallery spot",
+      "alias": "GallerySpot",
+      "view": "/App_Plugins/Grid/GallerySpot.html",
+      "render": "/App_Plugins/Grid/GallerySpotView.cshtml",
+      "icon": "icon-code"
+    }
+  ],
+  "javascript": [
+      "/App_Plugins/Grid/index.js",
+      "/App_Plugins/Grid/GallerySpot.js",
+      "/App_Plugins/Grid/GallerySpotDialog.js"
+  ]
+}

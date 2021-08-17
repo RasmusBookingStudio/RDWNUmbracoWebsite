@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Red Ruby Gem</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1, user-scalable=0" />
+     
+    
+
+</head>
+<body>
+    
+    <div class="container">
+        @Html.GetGridHtml(Model, "grid")
+    </div>
+         
+</body>
+</html>

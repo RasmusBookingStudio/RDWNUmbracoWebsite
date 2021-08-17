@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Editor</title>
+</head>
+<body>
+    <div ng-controller="My.MarkdownEditorController" class="wmd-panel">
+        <div id="wmd-button-bar-{{model.alias}}"></div>
+        <label>
+            <textarea ng-model="model.value" class="wmd-input" id="wmd-input-{{model.alias}}">
+            
+            </textarea>
+        </label>
+
+        
+        <div id="wmd-preview-{{model.alias}}" class="wmd-panel wmd-preview"></div>
+    </div>
+
+</body>
+</html>

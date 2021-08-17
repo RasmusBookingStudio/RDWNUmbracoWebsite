@@ -1,0 +1,13 @@
+﻿<div ng-controller="Grid.GallerySpot as vm">
+    <div ng-click="vm.open()" style="min-height: 200px; position: relative">
+        <img ng-show="url" src="{{url}}" />
+        <div ng-show="!url" style="min-height: 200px; background-color: #efefef; display: flex; justify-content: center; align-items: center"><small>No images</small></div>
+        <div style="display: flex; justify-content: space-between">
+            <h2>{{control.value.headline}}</h2>
+            <div ng-show="control.value.buttonText" style="background-color: rgba(0,0,0,0.8); color: #fff; padding: 0.5rem 1rem; margin: 0.5rem 0; border-radius: 0.25rem; text-align: center">{{control.value.buttonText}}</div>
+        </div>
+        <div style="position: absolute; top: 0.5rem; right: 0.5rem;">
+            <div style="background-color: rgba(0,0,0,0.8); color: #fff; padding: 0.5rem; border-radius: 0.25rem;">{{imagesCount}} images</div>
+        </div>
+    </div>
+</div>

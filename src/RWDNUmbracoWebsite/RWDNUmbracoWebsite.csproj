@@ -1,0 +1,678 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\UmbracoCms.8.15.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.15.1\build\UmbracoCms.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{151DDC61-FF73-4E04-8CF9-9C94F43DAFD6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RWDNUmbracoWebsite</RootNamespace>
+    <AssemblyName>RWDNUmbracoWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44396</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClientDependency.Core, Version=1.9.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency.1.9.9\lib\net45\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency-Mvc5.1.9.3\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpTest.Net.Collections, Version=14.906.1403.1082, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharpTest.Net.Collections.14.906.1403.1082\lib\net40\CSharpTest.Net.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Examine, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Examine.1.2.0\lib\net452\Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.7.0.100, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.7.0.100\lib\net452\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.10.0.100, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.10.0.100\lib\net452\ImageProcessor.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.4.0\lib\net46\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Annotation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Annotation.1.1.0\lib\net46\LightInject.Annotation.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Mvc.2.0.0\lib\net46\LightInject.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.WebApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.WebApi.2.0.0\lib\net46\LightInject.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagePack, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagePack.2.2.85\lib\netstandard2.0\MessagePack.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagePack.Annotations, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagePack.Annotations.2.2.85\lib\netstandard2.0\MessagePack.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.2\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.0.138\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.0.138\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Semver, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Semver.2.0.4\lib\net452\Semver.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.8.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Process, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Enrichers.Process.2.0.1\lib\net45\Serilog.Enrichers.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Thread, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Enrichers.Thread.3.0.0\lib\net45\Serilog.Enrichers.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Filters.Expressions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Filters.Expressions.2.0.0\lib\net45\Serilog.Filters.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Compact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Compact.1.0.0\lib\net45\Serilog.Formatting.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Compact.Reader, Version=1.0.3.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Compact.Reader.1.0.3\lib\net45\Serilog.Formatting.Compact.Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Settings.AppSettings.2.2.2\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Async, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Async.1.3.0\lib\net45\Serilog.Sinks.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Map, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Map.1.0.0\lib\netstandard2.0\Serilog.Sinks.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Superpower, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aec39280ded1b3a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Superpower.2.0.0\lib\net45\Superpower.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO" />
+    <Reference Include="System.Linq.Expressions" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.7.1\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.9.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.8.15.1\lib\net472\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Examine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Web.8.15.1\lib\net472\Umbraco.Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Web.8.15.1\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Web.8.15.1\lib\net472\Umbraco.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Web.8.15.1\lib\net472\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\Grid\GallerySpot.html" />
+    <Content Include="App_Plugins\Grid\GallerySpot.js" />
+    <Content Include="App_Plugins\Grid\GallerySpotDialog.html" />
+    <Content Include="App_Plugins\Grid\GallerySpotDialog.js" />
+    <Content Include="App_Plugins\Grid\GallerySpotView.cshtml" />
+    <Content Include="App_Plugins\Grid\index.js" />
+    <Content Include="App_Plugins\Grid\package.manifest" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\css\bootstrap-responsive.css" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\css\bootstrap.css" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\css\docs.css" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\ico\bootstrap-apple-114x114.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\ico\bootstrap-apple-57x57.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\ico\bootstrap-apple-72x72.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\ico\favicon.ico" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\bird.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\bootstrap-mdo-sfmoma-01.jpg" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\bootstrap-mdo-sfmoma-02.jpg" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\bootstrap-mdo-sfmoma-03.jpg" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\browsers.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-diagram-01.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-diagram-02.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-diagram-03.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-sites\bartop.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-sites\fleetio.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-sites\jshint.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-sites\kippt.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-sites\railwayjs.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\example-sites\totalwireframe.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\examples\bootstrap-example-fluid.jpg" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\examples\bootstrap-example-hero.jpg" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\examples\bootstrap-example-starter.jpg" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\github-16px.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons-halflings.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons\glyphicons_009_magic.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons\glyphicons_042_group.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons\glyphicons_079_podium.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons\glyphicons_082_roundabout.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons\glyphicons_155_show_thumbnails.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons\glyphicons_163_iphone.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons\glyphicons_214_resize_small.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\glyphicons\glyphicons_266_book_open.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\grid-18px-masked.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\icon-css3.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\icon-github.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\icon-html5.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\icon-twitter.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\less-logo-large.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\less-small.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\img\responsive-illustrations.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\application.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-alert.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-button.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-carousel.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-collapse.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-dropdown.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-modal.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-popover.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-scrollspy.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-tab.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-tooltip.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-transition.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\bootstrap-typeahead.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\jquery.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\base-css.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\index.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\.gitmodules" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\lib\compiler.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\lib\hogan.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\lib\template.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\html\list.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\index.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\index.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\mustache.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\tools\release.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\tools\web_templates.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\1.0.0\hogan.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\1.0.0\hogan.min.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.0\hogan.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.0\hogan.min.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.3\hogan.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.3\hogan.min.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.amd.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.common.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.amd.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.common.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.mustache.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.mustache.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.min.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\favicon.ico" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\images\logo.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\images\noise.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\images\small-hogan-icon.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\images\stripes.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\stylesheets\layout.css" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\stylesheets\skeleton.css" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\components.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\download.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\examples.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\examples\fluid.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\examples\hero.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\examples\starter-template.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\index.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\javascript.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\less.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\scaffolding.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\upgrading.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-alert.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-button.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-carousel.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-collapse.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-dropdown.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-modal.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-popover.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-scrollspy.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-tab.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-tooltip.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-transition.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\bootstrap-typeahead.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\index.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-alert.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-button.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-collapse.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-dropdown.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-modal.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-popover.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-scrollspy.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-tab.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-tooltip.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-transition.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\unit\bootstrap-typeahead.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\vendor\jquery.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\demo.html" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\less\less-1.2.2.min.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\node\demo.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\LICENSE.txt" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\Markdown.Converter.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\Markdown.Editor.Icons.fw.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\Markdown.Editor.Icons.png" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\Markdown.Editor.js" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\Markdown.Sanitizer.js" />
+    <Content Include="App_Plugins\MarkDownEditor\markdowneditor.controller.js" />
+    <Content Include="App_Plugins\MarkDownEditor\markdowneditor.html" />
+    <Content Include="App_Plugins\PersonPicker\person.resource.js" />
+    <Content Include="App_Plugins\PersonPicker\personpicker.controller.js" />
+    <Content Include="config\grid.editors.config.js" />
+    <Content Include="config\Lang\cs-CZ.user.xml" />
+    <Content Include="config\Lang\da-DK.user.xml" />
+    <Content Include="config\Lang\de-DE.user.xml" />
+    <Content Include="config\Lang\en-GB.user.xml" />
+    <Content Include="config\Lang\en-US.user.xml" />
+    <Content Include="config\Lang\es-ES.user.xml" />
+    <Content Include="config\Lang\fr-FR.user.xml" />
+    <Content Include="config\Lang\he-IL.user.xml" />
+    <Content Include="config\Lang\it-IT.user.xml" />
+    <Content Include="config\Lang\ja-JP.user.xml" />
+    <Content Include="config\Lang\ko-KR.user.xml" />
+    <Content Include="config\Lang\nb-NO.user.xml" />
+    <Content Include="config\Lang\nl-NL.user.xml" />
+    <Content Include="config\Lang\pl-PL.user.xml" />
+    <Content Include="config\Lang\pt-BR.user.xml" />
+    <Content Include="config\Lang\ru-RU.user.xml" />
+    <Content Include="config\Lang\sv-SE.user.xml" />
+    <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="config\logviewer.searches.config.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App_Plugins\PersonPicker\package.manifest" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\HomePage.cshtml" />
+    <Content Include="Views\master.cshtml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\imageprocessor\security.config" />
+    <Content Include="config\imageprocessor\processing.config" />
+    <Content Include="config\imageprocessor\cache.config" />
+    <Content Include="Media\Web.config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\serilog.user.config" />
+    <Content Include="config\serilog.config" />
+    <Content Include="config\HealthChecks.config" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\bootstrap.zip" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\js\README.md" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\.bin\hulk" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\.git_ignore" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\bin\hulk" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\LICENSE" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\Makefile" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\package.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\README.md" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\Changes" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\Rakefile" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\README.md" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\comments.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\comments.yml" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\delimiters.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\delimiters.yml" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\interpolation.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\interpolation.yml" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\inverted.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\inverted.yml" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\partials.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\partials.yml" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\sections.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\sections.yml" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\~lambdas.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\specs\~lambdas.yml" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\spec\TESTING.md" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\test\templates\list.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\web\index.html.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\wrappers\amd.js.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\wrappers\common.js.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\wrappers\js.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\node_modules\hogan.js\wrappers\mustache.js.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\build\package.json" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\layout.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\base-css.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\components.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\download.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\examples.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\index.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\javascript.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\less.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\scaffolding.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\templates\pages\upgrading.mustache" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\js\README.md" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\accordion.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\alerts.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\bootstrap.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\breadcrumbs.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\button-groups.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\buttons.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\carousel.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\close.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\code.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\component-animations.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\dropdowns.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\forms.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\grid.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\hero-unit.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\labels.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\layouts.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\mixins.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\modals.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\navbar.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\navs.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\pager.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\pagination.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\popovers.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\progress-bars.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\reset.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\responsive.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\scaffolding.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\sprites.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\tables.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\thumbnails.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\tooltip.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\type.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\utilities.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\variables.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\less\wells.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\LICENSE" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\Makefile" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\README.md" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\demo.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\Markdown.Editor.less" />
+    <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\README.md" />
+    <Content Include="App_Plugins\MarkDownEditor\package.manifest" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Partials\BlockList\Default.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="App_Plugins\PersonPicker\PersonView.html" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RWDNUmbracoModels\RWDNUmbracoModels.csproj">
+      <Project>{4c8dd355-af09-460f-afbc-1195664404f5}</Project>
+      <Name>RWDNUmbracoModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63171</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44396/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.8.15.1\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.15.1\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.8.15.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.15.1\build\UmbracoCms.targets'))" />
+  </Target>
+  <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
+  <Import Project="..\packages\UmbracoCms.8.15.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.15.1\build\UmbracoCms.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,32 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using System.Drawing
+@using RWDNUmbracoModels.Helpers
+@using Umbraco.Core.Composing
+@using Umbraco.Core.Models.PublishedContent
+
+@{
+	var imageIds = ValueHelper.ParseIds(Model.value.images.ToString());
+	IEnumerable<IPublishedContent> mediaNodes = Umbraco.Media(imageIds);
+	
+	var images = new List<RWDNUmbracoModels.Models.UmbracoImage>();
+	foreach (var mediaNode in mediaNodes) {
+		images.Add(new RWDNUmbracoModels.Models.UmbracoImage {
+			url = mediaNode.Url
+		}); 
+	}
+
+	var linkIsExternal = Model.value.link != null && !string.IsNullOrWhiteSpace((string)Model.value.externalLink);
+	string link = null;
+
+	int contentId = 0;
+	if (Model.value.link != null && int.TryParse(Model.value.link.ToString(), out contentId)) {
+		link = Umbraco.Content(contentId).Url;
+	} else {
+		link = Model.value.externalLink;
+	}
+
+	foreach (var image in images)
+	{
+		<img src="@image.url" />
+	}
+}

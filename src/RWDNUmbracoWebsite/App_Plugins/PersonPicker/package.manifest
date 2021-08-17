@@ -1,0 +1,17 @@
+﻿{
+  "propertyEditors": [
+    {
+      "alias": "RDWN.PersonPicker",
+      "name": "My person picker",
+      "icon": "icon-code",
+      "group": "Rich Content",
+      "editor": {
+        "view": "~/App_Plugins/PersonPicker/PersonView.html"
+      }
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/PersonPicker/personpicker.controller.js",
+    "~/App_Plugins/PersonPicker/person.resource.js"
+  ]
+}
