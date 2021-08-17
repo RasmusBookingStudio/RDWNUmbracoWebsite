@@ -1,2 +1,7 @@
 src/packages
 src/node_modules
+src/RWDNUmbracoWebsite/node_modules
+src/RWDNUmbracoWebsite/bin
+src/RWDNUmbracoWebsite/obj
+src/RWDNUmbracoModels/bin
+src/RWDNUmbracoModels/obj
