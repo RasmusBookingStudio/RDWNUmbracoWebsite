@@ -9,8 +9,6 @@
     }
   ],
   "javascript": [
-      "/App_Plugins/Grid/index.js",
-      "/App_Plugins/Grid/GallerySpot.js",
-      "/App_Plugins/Grid/GallerySpotDialog.js"
+      "/App_Plugins/Grid/Scripts/grid.js"
   ]
 }

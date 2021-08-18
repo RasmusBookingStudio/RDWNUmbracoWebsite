@@ -305,6 +305,7 @@
     <Content Include="App_Plugins\Grid\GallerySpotView.cshtml" />
     <Content Include="App_Plugins\Grid\index.ts" />
     <Content Include="App_Plugins\Grid\package.manifest" />
+    <Content Include="App_Plugins\Grid\Scripts\slideshow.js" />
     <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\css\bootstrap-responsive.css" />
     <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\css\bootstrap.css" />
     <Content Include="App_Plugins\MarkDownEditor\lib\pagedown-bootstrap\demo\browser\bootstrap\docs\assets\css\docs.css" />
@@ -478,6 +479,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="package-lock.json" />
@@ -637,9 +639,6 @@
       <Project>{4c8dd355-af09-460f-afbc-1195664404f5}</Project>
       <Name>RWDNUmbracoModels</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Plugins\Grid\Scripts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

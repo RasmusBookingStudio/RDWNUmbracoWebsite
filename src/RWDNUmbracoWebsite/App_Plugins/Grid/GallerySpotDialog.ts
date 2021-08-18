@@ -1,18 +1,4 @@
 export default function GallerySpotDialog(this: any, $scope) {
-    
-    $scope.link = {
-        view: 'contentPicker',
-        config: {
-            minNumber: 0,
-            maxNumber: 1
-        },
-        value: $scope.model.value?.link
-    };
-    
-    $scope.$watch("link.value", () => {
-        $scope.model.value.link = $scope.link.value;
-    });
-    
     $scope.images = {
         view: 'mediaPicker',
         config : {

@@ -5,7 +5,7 @@ import GallerySpotDialog from "./GallerySpotDialog";
 // GallerySpot
 angular
     .module("umbraco")
-    .controller("BookingStudio.GallerySpot", [
+    .controller("Grid.GallerySpot", [
         "$scope",
         "editorService",
         "mediaResource",
@@ -13,4 +13,4 @@ angular
     ]);
 angular
     .module("umbraco")
-    .controller("BookingStudio.GallerySpotDialog", ["$scope", GallerySpotDialog]);
+    .controller("Grid.GallerySpotDialog", ["$scope", GallerySpotDialog]);

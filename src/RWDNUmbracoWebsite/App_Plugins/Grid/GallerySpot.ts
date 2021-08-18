@@ -3,8 +3,9 @@ function GallerySpot (this: any, $scope, editorService, mediaResource) {
     this.open = () => {
         const options = {
             title: "Gallery Spot",
-            view: "/App_Plugins/Grid/GallerySpotView.cshtml",
+            view: "/App_Plugins/Grid/GallerySpotDialog.html",
             submit: function (model) {
+                $scope.control.value = model.value;
                 editorService.close();
             },
             close: function () {

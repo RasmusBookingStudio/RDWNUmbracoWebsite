@@ -4,6 +4,8 @@
 @using Umbraco.Core.Composing
 @using Umbraco.Core.Models.PublishedContent
 
+<script src="/App_Plugins/Grid/Scripts/slideshow.js"></script>
+
 @{
 	var imageIds = ValueHelper.ParseIds(Model.value.images.ToString());
 	IEnumerable<IPublishedContent> mediaNodes = Umbraco.Media(imageIds);
@@ -24,9 +26,28 @@
 	} else {
 		link = Model.value.externalLink;
 	}
-
-	foreach (var image in images)
-	{
-		<img src="@image.url" />
-	}
+	
+	<div class="gallery-container">
+		@foreach (var image in images)
+		{
+			<div class="image-slides fade">
+				<img src="@image.url" />
+			</div>
+		}
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		
+		<br>
+		<!-- The dots/circles -->
+        <div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+	        <span class="dot" onclick="currentSlide(3)"></span>
+	        <span class="dot" onclick="currentSlide(4)"></span>
+	        <span class="dot" onclick="currentSlide(5)"></span>
+	        <span class="dot" onclick="currentSlide(6)"></span>
+	        <span class="dot" onclick="currentSlide(7)"></span>
+	        <span class="dot" onclick="currentSlide(8)"></span>
+        </div>
+	</div>
 }
